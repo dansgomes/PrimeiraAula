@@ -14,17 +14,15 @@ public class PersonService {
 
 
         System.out.println("O nome da pessoa é. " + name);
-        System.out.println("A pessoa tem " + person.age + "anos de idade.");
+        System.out.println("A pessoa tem " + person.age + " anos de idade.");
         System.out.println("O horário da pessoa é "+ person.hour);
 
-        if (age >= 18){
-            System.out.println("A pessoa é maior de idade.");
-        } else{
-            System.out.println("A pessoa é menor de idade.");
-        }
+        //deMaior(age);
+
+        //CRIAR MÉTODOS E TESTES PARA O SEUS IFS
 
         if (live){
-            System.out.println("A pessoa " + person.name + " está viva. ");
+            return "Está";
         }else {
             System.out.println("A pessoa " + person.name + " está morto. ");
         }
@@ -34,4 +32,14 @@ public class PersonService {
             System.out.println("A pessoa " + person.name + "está desempregada.");
         }
     }
+
+   public boolean deMaior(int age){
+
+
+       if (age >= 18){
+           return true;
+       } else{
+           return false;
+       }
+   }
 }
