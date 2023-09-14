@@ -12,8 +12,6 @@ public class ChampionServiceTest {
     @Test
     public void criarPrimeiroChampion() {
 
-        // PersonService = Classe, sempre começa com maisculo
-        // personService = o nome da variavel
         Champion primeiroChampion= new Champion();
 
         primeiroChampion.setFunction("Jungler");
@@ -44,6 +42,7 @@ public class ChampionServiceTest {
 
         championService.deleteChampion(0);
 
+        System.out.println("-----------------------ATUALIZADO----------------------------");
         championService.printAllName();
 
 
