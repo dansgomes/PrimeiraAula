@@ -6,25 +6,34 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class ChampionServiceTest {
-    private ChampionListService championService = new ChampionListService ();
+    private ChampionListService championService = new ChampionListService();
 
 
     @Test
     public void criarPrimeiroChampion() {
 
-        Champion primeiroChampion= new Champion();
+        Champion primeiroChampion = new Champion();
 
         primeiroChampion.setFunction("Jungler");
         primeiroChampion.setRegion("Ionia");
         primeiroChampion.setName("Master Yi");
-
         championService.newChampion(primeiroChampion);
-        championService.printAllName();
 
     }
 
     @Test
-    public void createAndRemoveChampion(){
+    public void criarSegundoChampion() {
+        Champion segundoChampion = new Champion();
+
+        segundoChampion.setFunction("Support");
+        segundoChampion.setRegion("Demacia");
+        segundoChampion.setName("Sona");
+        championService.newChampion(segundoChampion);
+        championService.printAllName();
+    }
+
+    @Test
+    public void createAndRemoveChampion() {
 
         Champion primeiroChampion = new Champion();
         primeiroChampion.setFunction("Jungler");
@@ -44,22 +53,21 @@ public class ChampionServiceTest {
 
         System.out.println("-----------------------ATUALIZADO----------------------------");
         championService.printAllName();
-
-
-
     }
 
     @Test
-    public void criarSegundoChampion() {
-        Champion segundoChampion = new Champion();
+    public void updateChampion(){
+        this.criarPrimeiroChampion();
+        this.criarPrimeiroChampion();
+        this.criarSegundoChampion();
+        Champion xinZhao = this.championService.findChampion(1);
 
-        segundoChampion.setFunction("Support");
-        segundoChampion.setRegion("Demacia");
-        segundoChampion.setName("Sona");
-        championService.newChampion(segundoChampion);
-        championService.printAllName();
+        xinZhao.setName("Xin Zhao");
+        xinZhao.setRegion("Demacia");
 
 
+        this.championService.updateChampion(1, xinZhao);
+        this.championService.printAllName();
 
     }
 }
