@@ -41,7 +41,6 @@ public class ChampionServiceTest {
         terceiroChampion.setRegion("Ionia");
         terceiroChampion.setName("Karma");
         championService.newChampion(terceiroChampion);
-        championService.printAllName();
     }
     @Test
     public void createAndRemoveChampion() {

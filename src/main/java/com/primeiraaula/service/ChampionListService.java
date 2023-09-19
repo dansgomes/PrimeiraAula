@@ -29,7 +29,6 @@ public class ChampionListService {
 
     public void updateChampion(int index, Champion champion){
         this.championList.set(index, champion);
-        System.out.println("-------------------ATUALIZADO-------------------------------");
     }
 
     public Champion findChampion(int index){
